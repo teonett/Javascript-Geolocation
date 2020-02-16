@@ -16,8 +16,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-        <script type="text/javascript" src="main.js"></script>
-
     </head>
     <body>
         <header class="header">
@@ -46,35 +44,7 @@
             &copy; 2020 - Jose Teotonio - Localização Aproximada
         </footer>
 
-        <script>
-            function locate() {
-
-                const posStatus = document.querySelector('#posStatus');
-                const locInfo = document.querySelector('#locInfo');
-
-                posStatus.innerHTML='L o c a l i z a n d o...'
-
-                if (navigator.geolocation) {
-
-                    navigator.geolocation.getCurrentPosition((position)=>{
-                    
-                    const lat  = position.coords.latitude;
-                    const long = position.coords.longitude;
-                    
-                    posStatus.innerHTML='Localização Aproximada <br> Clique no link abaixo para exibir sua localização no mapa';
-                    
-                    // Display Latitude and Logitude
-                    locInfo.innerHTML = `Latitude: ${lat} <br> Longitude: ${long}`;
-                    
-                    // Create the link. Use map=15-19 for zooming out and in
-                    // Pass lat and long to openstreetmap
-                    locInfo.href = `https://www.openstreetmap.org/#map=19/${lat}  /${long}`;
-                    
-                });
-                }
-                
-            }
-        </script>
+        <script type="text/javascript" src="main.js"></script>
 
     </body>
 </html>
